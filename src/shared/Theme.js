@@ -1,11 +1,15 @@
 import {Dimensions, Platform, PixelRatio} from 'react-native';
 
 export const colors = {
-  primary: '#0a9aea',
-  secondary: '#eff7fd',
+  primary: '#ffdfd8',
+  secondary: '#000000',
   lightBackground: '#eeeff0',
-  lightGrey: 'rgb(245,245,245)',
+  lightGrey1: '#d0d0d0',
+  lightGrey2: '#edeef0',
+  lightGrey3: '#bcbcbc',
   darkGray: '#666565',
+  blueGray: '#f7f7ff',
+  darkPink: '#866766',
 };
 
 const width = Dimensions.get('window').width;

@@ -1,13 +1,19 @@
 import {combineReducers} from 'redux';
 import ActionTypes from './actionTypes';
 
-let dummyState = {
-  dummyState: 'dummyState',
+let currentPainting = {};
+
+let UserInfo = {
+  firstname: '',
+  lastname: '',
+  email: '',
+  phone: '',
+  address: '',
 };
 
-const dummyReducer = (state = dummyState, action) => {
+const CurrentPaintingReducer = (state = currentPainting, action) => {
   switch (action.type) {
-    case ActionTypes.ACTION_TYPE_1:
+    case ActionTypes.SET_PAINTING_INFO:
       state = Object.assign({}, state, {...action.payload});
       return state;
 
@@ -17,4 +23,16 @@ const dummyReducer = (state = dummyState, action) => {
   return state;
 };
 
-export default combineReducers({dummyReducer});
+const UserInfoReducer = (state = UserInfo, action) => {
+  switch (action.type) {
+    case ActionTypes.SET_USER_INFO:
+      state = Object.assign({}, state, {...action.payload});
+      return state;
+
+    default:
+      break;
+  }
+  return state;
+};
+
+export default combineReducers({CurrentPaintingReducer, UserInfoReducer});
